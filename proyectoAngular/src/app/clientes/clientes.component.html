@@ -1,0 +1,22 @@
+<div>
+<h2>Lista de clientes</h2>
+<table class="table table-success table-striped">
+  <thead>
+  <th>DNI</th>
+  <th>NOMBRE</th>
+  <th>APELLIDOS</th>
+  <th>DIRECCIÓN</th>
+  <th>NUMERO CLIENTE</th>
+</thead>
+<tbody>
+<tr *ngFor='let cliente of clientes'>
+  <th scope="row">{{cliente.dni}}</th>
+  <td>{{cliente.nombre}}</td>
+  <td>{{cliente.apellido}}</td>
+  <td>{{cliente.direccion}}</td>
+  <td>{{cliente.num_cliente}}</td>
+</tr>
+
+</tbody>
+</table>
+</div>
