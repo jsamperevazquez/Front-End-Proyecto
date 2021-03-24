@@ -1,12 +1,15 @@
-<div>
+<div class="container">
 <h2>Lista de clientes</h2>
+<button class="btn btn-info" type="button" [routerLink]="['/clientes/form']">Nuevo Cliente</button>
 <table class="table table-success table-striped">
   <thead>
-  <th>DNI</th>
-  <th>NOMBRE</th>
-  <th>APELLIDOS</th>
-  <th>DIRECCIÓN</th>
-  <th>NUMERO CLIENTE</th>
+  <th scope="col">DNI</th>
+  <th scope="col">NOMBRE</th>
+  <th scope="col">APELLIDOS</th>
+  <th scope="col">DIRECCIÓN</th>
+  <th scope="col">NUMERO CLIENTE</th>
+  <th scope="col">EDITAR</th>
+
 </thead>
 <tbody>
 <tr *ngFor='let cliente of clientes'>
@@ -15,6 +18,7 @@
   <td>{{cliente.apellido}}</td>
   <td>{{cliente.direccion}}</td>
   <td>{{cliente.num_cliente}}</td>
+  <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/clientes/form', cliente.dni]">EDITAR</button></td>
 </tr>
 
 </tbody>
