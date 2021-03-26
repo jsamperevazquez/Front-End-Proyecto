@@ -1,11 +1,14 @@
+<body>
+  <meta name="_csrf" th:content="${_csrf.token}"/>
 <div class="container">
-<div class="card-body">
-<h5 class="card-title">{{titulo}}</h5>
-<form>
+<div class="card-body" >
+  <h1 class="card-title" style="color: brown;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"><b>{{titulo}}</b></h1>
+<form style="padding: 100px;">
   <div class="form-group row">
     <label for="nombres" class="col-form-label col-sm-2">Dni</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="dni"  [(ngModel)]="cliente.dni">
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </div>
   </div>
   <div class="form-group row">
@@ -32,10 +35,9 @@
       <input type="text" class="form-control" name="num_cliente"  [(ngModel)]="cliente.num_cliente">
     </div>
   </div>
-  <button class="btn btn-success" role="button" (click)='create()' >Registrar</button>
-
-  <button class="btn btn-success" role="button" (click)='update()' >Actualizar</button>
-
+  <p><br></p>
+  <button class="btn btn-success" role="button" (click)='create()'>Guardar</button>
 </form>
 </div>
 </div>
+</body>

@@ -1,0 +1,8 @@
+
+body {
+	background-image: url('../../assets/fondo.jpg');
+	background-repeat: no-repeat;
+	width: 3440px;
+  height:100vh;
+  background-size: 100% 100%;
+}
