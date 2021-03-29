@@ -19,4 +19,14 @@ export class ClientesComponent implements OnInit {
     );
   }
 
+  delete (cliente:Cliente):void{
+    console.log("Borrar");
+    this.clienteService.delete(cliente.dni).subscribe(
+
+      res=>this.clienteService.getAll().subscribe(
+        respon=>this.clientes=respon
+
+      )
+      );
+  }
 }
