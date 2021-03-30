@@ -11,7 +11,6 @@ import { ClienteService } from './cliente.service';
 export class FormClienteComponent implements OnInit {
 
   cliente:Cliente = new Cliente();
-  titulo:string="Registro de cliente";
 
 
   constructor(private clienteService:ClienteService, private router:Router,private activatedRoute:ActivatedRoute) { }
