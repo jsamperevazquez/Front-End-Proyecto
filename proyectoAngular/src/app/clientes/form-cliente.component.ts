@@ -35,13 +35,14 @@ export class FormClienteComponent implements OnInit {
     console.log(this.cliente);
     this.clienteService.create(this.cliente).subscribe(
       res=>this.router.navigate(['/clientes'])
-
-    )
+      )
+      location.href = 'http://localhost:4200/clientes'
   }
 
   update():void{
     this.clienteService.update(this.cliente).subscribe(
       res=>this.router.navigate(['/clientes'])
     )
+
   }
 }

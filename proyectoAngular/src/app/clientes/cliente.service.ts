@@ -28,6 +28,7 @@ export class ClienteService {
   //Actualizar un cliente
   update(cliente:Cliente):Observable<Cliente>{
     return this.http.put<Cliente>(this.url, cliente);
+
   }
 
   //Eliminar un cliente
