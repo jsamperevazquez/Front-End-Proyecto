@@ -9,6 +9,7 @@ import { from } from 'rxjs';
 import { ClientesComponent } from './clientes/clientes.component';
 import { FormClienteComponent } from './clientes/form-cliente.component';
 import {FormsModule} from '@angular/forms';
+import { ProductosComponent } from './productos/productos.component';
 const routes:Routes=[
   {path:'', redirectTo:'/clientes', pathMatch:'full'},
   {path:'clientes', component:ClientesComponent},
@@ -20,6 +21,7 @@ const routes:Routes=[
     AppComponent,
     ClientesComponent,
     FormClienteComponent,
+    ProductosComponent,
   ],
   imports: [
     BrowserModule,
