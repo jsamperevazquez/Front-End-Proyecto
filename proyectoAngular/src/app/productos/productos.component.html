@@ -1,1 +1,67 @@
-<p>productos works!</p>
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control form-control-dark" placeholder="Search...">
+      </form>
+
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-light me-2">Login</button>
+        <button type="button" class="btn btn-warning">Sign-up</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<body style="background-color: darkgray;black;width:3440px; height:100vh;">
+  <div class="container" style="background-image:url('../../../assets/img/images.png') ;">
+    <p><br><br></p>
+
+    <h1>
+      <span>P</span><span>R</span><span>O</span><span>Y</span><span>E</span><span>C</span><span>T</span><span>O</span><span></span><span> </span><span>P</span><span>R</span><span>O</span><span>G</span><span>R</span><span>A</span><span>M</span><span>A</span><span>C</span><span>I</span><span>Ó</span><span>N</span>
+    </h1>
+
+    <!--<div class="shadow p-3 mb-5 bg-body rounded"><h1 >PROYECTO DE PROGRAMACIÓN 1º DAM</h1></div> -->
+
+    <p><br><br></p>
+
+    <p><br><br></p>
+    <h2 style="font-family: fantasy;">Lista de productos</h2>
+    <button class="btn btn-info" type="button" [routerLink]="['/clientes/form']">Nuevo Producto</button>
+    <table class="table table-success table-striped">
+      <thead>
+        <th scope="col" class="text-warning bg-dark">CODIGO</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">PRECIO</th>
+        <th scope="col" class="p-3 mb-2 bg-success text-white">EDITAR PRODUCTO</th>
+        <th scope="col" class="table-danger">ELIMINAR PRODUCTO</th>
+
+      </thead>
+      <tbody>
+        <tr *ngFor='let producto of productos'>
+          <th scope="row">{{producto.codigo}}</th>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.precio}}</td>
+          <td><button type="button" name="button" class="btn btn-primary"
+              [routerLink]="['/clientes/form', producto.codigo]">EDITAR</button></td>
+          <td><button class="btn btn-danger" (click)="delete(producto)">Eliminar</button></td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+      </body>

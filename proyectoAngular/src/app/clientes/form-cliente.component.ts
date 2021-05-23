@@ -10,38 +10,38 @@ import { ClienteService } from './cliente.service';
 })
 export class FormClienteComponent implements OnInit {
 
-  cliente:Cliente = new Cliente();
+  cliente: Cliente = new Cliente();
 
 
-  constructor(private clienteService:ClienteService, private router:Router,private activatedRoute:ActivatedRoute) { }
+  constructor(private clienteService: ClienteService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.cargar();
   }
 
-  cargar():void{
+  cargar(): void {
     this.activatedRoute.params.subscribe(
-      e=>{
-        let dni=e['dni'];
+      e => {
+        let dni = e['dni'];
         if (dni) {
           this.clienteService.get(dni).subscribe(
-            cli=>this.cliente=cli
+            cli => this.cliente = cli
           )
         }
       }
     )
   }
-  create():void{
+  create(): void {
     console.log(this.cliente);
     this.clienteService.create(this.cliente).subscribe(
-      res=>this.router.navigate(['/clientes'])
-      )
-      location.href = 'http://localhost:4200/clientes'
+      res => this.router.navigate(['/clientes'])
+    )
+    location.href = 'http://localhost:4200/clientes'
   }
 
-  update():void{
+  update(): void {
     this.clienteService.update(this.cliente).subscribe(
-      res=>this.router.navigate(['/clientes'])
+      res => this.router.navigate(['/clientes'])
     )
 
   }
