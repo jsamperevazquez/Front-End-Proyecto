@@ -11,6 +11,7 @@ import { FormClienteComponent } from './clientes/form-cliente.component';
 import { FormsModule } from '@angular/forms';
 import { ProductosComponent } from './productos/productos.component';
 import { FormProductoComponent } from './productos/form-producto.component';
+import { ProveedoresComponent } from './proveedores/proveedores.component';
 const routes: Routes = [
   { path: '', redirectTo: '/clientes', pathMatch: 'full' },
   { path: 'clientes', component: ClientesComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
     FormClienteComponent,
     ProductosComponent,
     FormProductoComponent,
+    ProveedoresComponent,
   ],
   imports: [
     BrowserModule,
