@@ -85,7 +85,7 @@
         <feMergeNode in='secondShadow_11'/>
       </feMerge>
 
-      <feImage x='0' y='0' width='600' height='200' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg'/>
+      <feImage x='0' y='0' width='800' height='250' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg'/>
       <feComposite in2='secondShadow' operator='in' result='secondShadow'/>
 
       <feMerge>
@@ -109,32 +109,32 @@
 <div class="card-body" >
 <form style="padding: 100px;">
   <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>Dni</b></label>
+    <label for="nombres" class="col-form-label col-sm-2"><b>DNI</b></label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="dni"  [(ngModel)]="cliente.dni">
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </div>
   </div>
   <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>Nombre</b></label>
+    <label for="nombres" class="col-form-label col-sm-2"><b>NOMBRE</b></label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="nombres"  [(ngModel)]="cliente.nombre">
     </div>
   </div>
   <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>Apellidos</b></label>
+    <label for="nombres" class="col-form-label col-sm-2"><b>APELLIDOS</b></label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="apellidos" [(ngModel)]="cliente.apellido">
     </div>
   </div>
   <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>Dirección</b></label>
+    <label for="nombres" class="col-form-label col-sm-2"><b>DIRECCIÓN</b></label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="direccion"  [(ngModel)]="cliente.direccion">
     </div>
   </div>
   <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>Numero Cliente</b></label>
+    <label for="nombres" class="col-form-label col-sm-2"><b>Nº CLIENTE</b></label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="num_cliente"  [(ngModel)]="cliente.num_cliente">
     </div>

@@ -12,14 +12,18 @@ import { FormsModule } from '@angular/forms';
 import { ProductosComponent } from './productos/productos.component';
 import { FormProductoComponent } from './productos/form-producto.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { FormProveedorComponent } from './proveedores/form-proveedor.component';
 const routes: Routes = [
   { path: '', redirectTo: '/clientes', pathMatch: 'full' },
   { path: 'clientes', component: ClientesComponent },
   { path: 'productos', component: ProductosComponent },
+  { path: 'proveedores', component: ProveedoresComponent },
   { path: 'clientes/form', component: FormClienteComponent },
   { path: 'productos/form', component: FormProductoComponent },
+  { path: 'proveedores/form', component: FormProveedorComponent },
   { path: 'clientes/form/:dni', component: FormClienteComponent },
-  { path: 'productos/form/:codigo', component: FormProductoComponent }
+  { path: 'productos/form/:codigo', component: FormProductoComponent },
+  { path: 'proveedores/form/:nif', component: FormProveedorComponent }
 ]
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ const routes: Routes = [
     ProductosComponent,
     FormProductoComponent,
     ProveedoresComponent,
+    FormProveedorComponent,
   ],
   imports: [
     BrowserModule,

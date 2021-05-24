@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Url } from 'node:url';
 import { Observable } from 'rxjs';
 import { Proveedor } from './proveedor';
 @Injectable({
@@ -8,7 +7,7 @@ import { Proveedor } from './proveedor';
 })
 export class ProveedorService {
 
-  private url: string = "/api/proovedores"
+  private url: string = "/api/proveedores"
   constructor(private http: HttpClient) { }
 
 
@@ -39,7 +38,7 @@ export class ProveedorService {
 
   // Eliminar un provvedor
 
-  delete(codigo: number): Observable<Proveedor> {
-    return this.http.delete<Proveedor>(this.url + '/' + codigo);
+  delete(nif: string): Observable<Proveedor> {
+    return this.http.delete<Proveedor>(this.url + '/' + nif);
   }
 }
