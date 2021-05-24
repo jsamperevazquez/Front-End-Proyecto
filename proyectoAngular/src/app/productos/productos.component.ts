@@ -21,7 +21,7 @@ export class ProductosComponent implements OnInit {
 
   delete(producto: Producto): void {
     console.log("Borrar");
-    this.productoService.delete(producto.codigo ?).subscribe(
+    this.productoService.delete(producto.codigo).subscribe(
 
       res => this.productoService.getAll().subscribe(
         respon => this.productos = respon

@@ -10,9 +10,6 @@ import { Producto } from './producto';
 export class ProductoService {
 
   private url: string = "/api/productos";
-
-
-
   constructor(private http: HttpClient) { }
 
   //obtener todos los productos
