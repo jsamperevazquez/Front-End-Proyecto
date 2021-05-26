@@ -1,5 +1,5 @@
 <header class="p-3 bg-dark text-white">
-  <div class="container">
+  <div class="container1">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
@@ -29,35 +29,49 @@
 <p><br><br></p>
 
 <h1><span>P</span><span>R</span><span>O</span><span>Y</span><span>E</span><span>C</span><span>T</span><span>O</span><span></span><span> </span><span>P</span><span>R</span><span>O</span><span>G</span><span>R</span><span>A</span><span>M</span><span>A</span><span>C</span><span>I</span><span>Ó</span><span>N</span></h1>
+<h1><span>Tabla &nbsp;</span> <span>Clientes</span></h1>
+<h2>Creado por  <a href="https://github.com/jsamperevazquez/" target="_blank">Jose Ángel Sampere</a><a>&nbsp;&nbsp;&nbsp;</a>  <a href="https://github.com/daaviidm10" target="_blank">David Mariño</a></h2>
 
-<!--<div class="shadow p-3 mb-5 bg-body rounded"><h1 >PROYECTO DE PROGRAMACIÓN 1º DAM</h1></div> -->
-
-  <p><br><br></p>
-  <h2 style="font-family: fantasy;">Lista de clientes</h2>
-<button class="btn btn-info" type="button" [routerLink]="['/clientes/form']">Nuevo Cliente</button>
-<table class="table table-success table-striped">
+<table class="container">
   <thead>
-  <th scope="col" class="text-warning bg-dark">DNI</th>
-  <th scope="col">NOMBRE</th>
-  <th scope="col">APELLIDOS</th>
-  <th scope="col">DIRECCIÓN</th>
-  <th scope="col">NUMERO CLIENTE</th>
-  <th scope="col" class="p-3 mb-2 bg-success text-white">EDITAR CLIENTE</th>
-  <th scope="col" class="table-danger">ELIMINAR CLIENTE</th>
 
-</thead>
-<tbody>
-<tr *ngFor='let cliente of clientes'>
-  <th scope="row">{{cliente.dni}}</th>
-  <td>{{cliente.nombre}}</td>
-  <td>{{cliente.apellido}}</td>
-  <td>{{cliente.direccion}}</td>
-  <td>{{cliente.num_cliente}}</td>
-  <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/clientes/form', cliente.dni]">EDITAR</button></td>
-  <td><button class="btn btn-danger" (click)="delete(cliente)">Eliminar</button></td>
-</tr>
+    <tr>
+      <th>
+        <h1>DNI</h1>
+      </th>
+      <th>
+        <h1>NOMBRE</h1>
+      </th>
+      <th>
+        <h1>APELLIDOS</h1>
+      </th>
+      <th>
+        <h1>DIRECCIÓN</h1>
+      </th>
+      <th>
+        <h1>NUMERO CLIENTE</h1>
+      </th>
+      <th>
+        <h1>EDITAR CLIENTE</h1>
+      </th>
+      <th>
+        <h1>ELIMINAR CLIENTE</h1>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let cliente of clientes'>
+      <th scope="row">{{cliente.dni}}</th>
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.apellido}}</td>
+      <td>{{cliente.direccion}}</td>
+      <td>{{cliente.num_cliente}}</td>
+      <td><button type="button" name="button" class="btn btn-primary" [routerLink]="['/clientes/form', cliente.dni]">EDITAR</button></td>
+      <td><button class="btn btn-danger" (click)="delete(cliente)">ELIMINAR</button></td>
+    </tr>
 
-</tbody>
+  </tbody>
+
+<button class="btn btn-info" type="button" [routerLink]="['/clientes/form']">Nuevo Cliente</button>
 </table>
-</div>
-</body>
+

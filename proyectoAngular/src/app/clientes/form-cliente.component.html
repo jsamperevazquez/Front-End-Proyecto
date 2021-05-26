@@ -1,147 +1,51 @@
-<header class="p-3 bg-dark text-white">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-      </a>
 
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-      </ul>
+<!DOCTYPE html>
+<html>
 
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" class="form-control form-control-dark" placeholder="Search...">
+<head>
+  <meta charset="utf-8">
+  <title>Form-v9 by Colorlib</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="form-cliente.component.css">
+  <link rel="stylesheet" href="form-cliente.component.css" />
+</head>
+
+<body class="form-v9">
+  <div class="page-content">
+    <div class="form-v9-content" style="background-image: url('images/form-v9.jpg')">
+      <form class="form-detail" action="#" method="post">
+        <h2>DATOS CLIENTE</h2>
+        <div class="form-row-total">
+            <input type="hidden" name="num_cliente" id="num_cliente" [(ngModel)]="cliente.num_cliente">
+             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <div class="form-row">
+            <input type="text" name="full-name" id="full-name" class="input-text" placeholder="Nombre" required [(ngModel)]="cliente.nombre">
+          </div>
+          <div class="form-row">
+            <input type="text" name="your-email" id="your-email" class="input-text" placeholder="Dirección" required [(ngModel)]="cliente.direccion">
+          </div>
+        </div>
+        <div class="form-row-total">
+          <div class="form-row">
+            <input type="text" name="last-name" id="last-name" class="input-text" placeholder="Apellidos" required [(ngModel)]="cliente.apellido">
+          </div>
+          <div class="form-row">
+            <input type="text" name="phone" id="phone" class="input-text" placeholder="DNI" required [(ngModel)]="cliente.dni">
+          </div>
+        </div>
+        <div class="form-row-total">
+          <div class="form-row">
+            <input type="text" name="num_cliente" id="num_cliente" class="input-text" placeholder="Número Cliente" required [(ngModel)]="cliente.num_cliente">
+          </div>
+        </div>
+        <div class="form-row-last">
+          <input type="submit" name="register" class="register" value="Registrar" (click)='create()'>
+        </div>
       </form>
-
-      <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2">Login</button>
-        <button type="button" class="btn btn-warning">Sign-up</button>
-      </div>
     </div>
   </div>
-</header>
-
-<body>
-  <meta name="_csrf" th:content="${_csrf.token}"/>
-<div style="text-align: center;">
-  <svg width='700' height='300'>
-    <filter id='money'>
-      <feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand'/>
-
-      <feOffset in='expand' dx='1' dy='1' result='shadow_1'/>
-      <feOffset in='expand' dx='2' dy='2' result='shadow_2'/>
-      <feOffset in='expand' dx='3' dy='3' result='shadow_3'/>
-      <feOffset in='expand' dx='4' dy='4' result='shadow_4'/>
-      <feOffset in='expand' dx='5' dy='5' result='shadow_5'/>
-      <feOffset in='expand' dx='6' dy='6' result='shadow_6'/>
-      <feOffset in='expand' dx='7' dy='7' result='shadow_7'/>
-
-      <feMerge result='shadow'>
-        <feMergeNode in='expand'/>
-        <feMergeNode in='shadow_1'/>
-        <feMergeNode in='shadow_2'/>
-        <feMergeNode in='shadow_3'/>
-        <feMergeNode in='shadow_4'/>
-        <feMergeNode in='shadow_5'/>
-        <feMergeNode in='shadow_6'/>
-        <feMergeNode in='shadow_7'/>
-      </feMerge>
-
-      <feFlood flood-color='#ebe7e0'/>
-      <feComposite in2='shadow' operator='in' result='shadow'/>
-
-      <feMorphology in='shadow' operator='dilate' radius='1' result='border'/>
-      <feFlood flood-color='#35322a' result='border_color'/>
-      <feComposite in2='border' operator='in' result='border'/>
-
-      <feOffset in='border' dx='1' dy='1' result='secondShadow_1'/>
-      <feOffset in='border' dx='2' dy='2' result='secondShadow_2'/>
-      <feOffset in='border' dx='3' dy='3' result='secondShadow_3'/>
-      <feOffset in='border' dx='4' dy='4' result='secondShadow_4'/>
-      <feOffset in='border' dx='5' dy='5' result='secondShadow_5'/>
-      <feOffset in='border' dx='6' dy='6' result='secondShadow_6'/>
-      <feOffset in='border' dx='7' dy='7' result='secondShadow_7'/>
-      <feOffset in='border' dx='8' dy='8' result='secondShadow_8'/>
-      <feOffset in='border' dx='9' dy='9' result='secondShadow_9'/>
-      <feOffset in='border' dx='10' dy='10' result='secondShadow_10'/>
-      <feOffset in='border' dx='11' dy='11' result='secondShadow_11'/>
-
-      <feMerge result='secondShadow'>
-        <feMergeNode in='border'/>
-        <feMergeNode in='secondShadow_1'/>
-        <feMergeNode in='secondShadow_2'/>
-        <feMergeNode in='secondShadow_3'/>
-        <feMergeNode in='secondShadow_4'/>
-        <feMergeNode in='secondShadow_5'/>
-        <feMergeNode in='secondShadow_6'/>
-        <feMergeNode in='secondShadow_7'/>
-        <feMergeNode in='secondShadow_8'/>
-        <feMergeNode in='secondShadow_9'/>
-        <feMergeNode in='secondShadow_10'/>
-        <feMergeNode in='secondShadow_11'/>
-      </feMerge>
-
-      <feImage x='0' y='0' width='800' height='250' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg'/>
-      <feComposite in2='secondShadow' operator='in' result='secondShadow'/>
-
-      <feMerge>
-        <feMergeNode in='secondShadow'/>
-        <feMergeNode in='border'/>
-        <feMergeNode in='shadow'/>
-        <feMergeNode in='SourceGraphic'/>
-      </feMerge>
-    </filter>
-
-    <text dominant-baseline='middle' text-anchor='middle' x='50%' y='50%'>
-      REGISTRO CLIENTES
-    </text>
-  </svg>
-</div>
-
-
-
-
-  <div class="container">
-<div class="card-body" >
-<form style="padding: 100px;">
-  <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>DNI</b></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" name="dni"  [(ngModel)]="cliente.dni">
-      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>NOMBRE</b></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" name="nombres"  [(ngModel)]="cliente.nombre">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>APELLIDOS</b></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" name="apellidos" [(ngModel)]="cliente.apellido">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>DIRECCIÓN</b></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" name="direccion"  [(ngModel)]="cliente.direccion">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="nombres" class="col-form-label col-sm-2"><b>Nº CLIENTE</b></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" name="num_cliente"  [(ngModel)]="cliente.num_cliente">
-    </div>
-  </div>
-  <p><br></p>
-  <button class="btn btn-success" role="button" (click)='create()'>Guardar</button>
-</form>
-</div>
-</div>
 </body>
+
+</html>
+
+

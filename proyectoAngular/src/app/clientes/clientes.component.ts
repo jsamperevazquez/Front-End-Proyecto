@@ -9,24 +9,24 @@ import { ClienteService } from './cliente.service';
 })
 export class ClientesComponent implements OnInit {
 
-  clientes:Cliente[]=[];
+  clientes: Cliente[] = [];
 
-  constructor(private clienteService:ClienteService) { }
+  constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
     this.clienteService.getAll().subscribe(
-      c=>this.clientes =c
+      c => this.clientes = c
     );
   }
 
-  delete (cliente:Cliente):void{
+  delete(cliente: Cliente): void {
     console.log("Borrar");
     this.clienteService.delete(cliente.dni).subscribe(
 
-      res=>this.clienteService.getAll().subscribe(
-        respon=>this.clientes=respon
+      res => this.clienteService.getAll().subscribe(
+        respon => this.clientes = respon
 
       )
-      );
+    );
   }
 }
