@@ -1,8 +1,7 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
 
-html, body { height: 100%; }
-
+html, body { height: 100%; background-image: url('C:\Users\angel\Documents\proyectoAngular\proyectoAngular\src\assets\fondo11.jpg'); width:auto; height:auto;}
 
 h1 {
  font: size 2em;
