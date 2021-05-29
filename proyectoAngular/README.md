@@ -1,27 +1,32 @@
 # ProyectoAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+Este proyecto ha sido creado con  [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+![Angular](C:\Users\Usuario\OneDrive\Escritorio\angular-logo.png)
 
-## Development server
+## Servidor de desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecuta `ng serve` para servidor dev. Navega en  `http://localhost:4200/`. La aplicación recargará automáticamente cuando se realize cualquier tipo de cambio.
 
-## Code scaffolding
+## Codigo para generar componentes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecuta `ng generate component nombre-componente` para generar nuevo componente. Se puede usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Construir proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Ejecuta `ng build` para crear proyecto. Los artifacts se crearán en  `dist/` directorio. Usa la  `--prod` bandera construcción de producción.
 
-## Running unit tests
+## Ejecutar tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecuta `ng test` para ver test de app vía [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Ejecutando end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Ejecuta `ng e2e` para ejecutar los end-to-end tests vía [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Ayuda
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obtener más ayuda sobre Angular usa `ng help` o visita [Angular CLI Overview and Command Reference](https://angular.io/cli).
+
+## Funcionalidad proyecto
+
+Este proyecto está creado con la finalidad de consumir un BackEnd realizado en java, con framework SprinBoot, y base de datos en MySQL.[BackEnd](https://github.com/jsamperevazquez/proyectoProgramacion)    
