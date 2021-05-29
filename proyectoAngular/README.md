@@ -1,7 +1,8 @@
 # ProyectoAngular
 
-Este proyecto ha sido creado con  [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
-![Angular](C:\Users\Usuario\OneDrive\Escritorio\angular-logo.png)
+Este proyecto ha sido creado con  [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.  
+
+![Angular](https://sg.com.mx/sites/default/files/styles/570x500/public/images/angular-logo.png?itok=_4hR0cNu)
 
 ## Servidor de desarrollo
 
