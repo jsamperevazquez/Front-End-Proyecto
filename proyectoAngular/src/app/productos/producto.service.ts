@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Producto } from './producto';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Producto } from './producto';
 })
 export class ProductoService {
 
-  private url: string = "/api/productos";
+  private url: string = environment.productoUrl;
   constructor(private http: HttpClient) { }
 
   //obtener todos los productos

@@ -1,6 +1,6 @@
 {
   "/api/*":{
-    "target" : "http://localhost:8080",
+    "target" : "http://ec2-54-171-133-27.eu-west-1.compute.amazonaws.com:8080",
     "secure" : false,
     "logLevel" : "debug",
     "changeOrigin": true

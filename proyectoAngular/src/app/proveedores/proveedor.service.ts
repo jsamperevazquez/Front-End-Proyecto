@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Proveedor } from './proveedor';
+import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class ProveedorService {
 
-  private url: string = "/api/proveedores"
+  private url: string = environment.proveedorUrl;
   constructor(private http: HttpClient) { }
 
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proveedor } from './proveedor';
 import { ProveedorService } from './proveedor.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-form-proveedor',

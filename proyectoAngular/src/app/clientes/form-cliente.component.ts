@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from './cliente';
 import { ClienteService } from './cliente.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-form-cliente',

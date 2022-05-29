@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cliente } from './cliente';
+import { environment } from 'src/environments/environment.prod';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
 
-  private url: string = '/api/clientes';
+  private url: string = environment.clienteUrl;
   constructor(private http: HttpClient) { }
 
   //obtener todos los clientes
