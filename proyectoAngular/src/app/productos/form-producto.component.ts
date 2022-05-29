@@ -39,7 +39,7 @@ export class FormProductoComponent implements OnInit {
     this.productoService.create(this.producto).subscribe(
       res => this.router.navigate(['/productos'])
     )
-    location.href = 'http://localhost:4200/productos'
+    location.href = 'http://samaria-bucket.s3-website-eu-west-1.amazonaws.com/productos'
   }
 
   update(): void {

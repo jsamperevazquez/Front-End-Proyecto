@@ -37,7 +37,7 @@ export class FormProveedorComponent implements OnInit {
     this.proveedorService.create(this.proveedor).subscribe(
       res => this.router.navigate(['/proveedores'])
     )
-    location.href = 'http://localhost:4200/proveedores'
+    location.href = 'http://samaria-bucket.s3-website-eu-west-1.amazonaws.com/proveedores'
   }
 
   update(): void {
