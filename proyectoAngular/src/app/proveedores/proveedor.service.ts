@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ProveedorService {
 
-  private url: string = environment.proveedorUrl;
+  private url: string = environment.proveedoresUrl;
   constructor(private http: HttpClient) { }
 
 

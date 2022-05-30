@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ProductoService {
 
-  private url: string = environment.productoUrl;
+  private url: string = environment.productosUrl;
   constructor(private http: HttpClient) { }
 
   //obtener todos los productos
