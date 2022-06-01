@@ -37,7 +37,7 @@ export class FormClienteComponent implements OnInit {
     this.clienteService.create(this.cliente).subscribe(
       res => this.router.navigate(['/clientes'])
     )
-    location.href = 'http://samaria-bucket.s3-website-eu-west-1.amazonaws.com/clientes'
+    location.href = 'http://samairsolutions.s3-website-eu-west-1.amazonaws.com/clientes'
   }
 
   update(): void {
