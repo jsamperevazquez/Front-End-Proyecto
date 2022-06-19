@@ -1,0 +1,43 @@
+@use 'src/variables' as *;
+
+:host {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  & .logo {
+    width: 32px;
+    height: 32px;
+    background: #FFF;
+    color: #000;
+    margin: 16px 24px 16px 0;
+    float: left;
+    border-radius: $radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+
+  [nz-menu] {
+    line-height: 64px;
+  }
+
+  nz-breadcrumb {
+    margin: 16px 0;
+  }
+
+  nz-content {
+    margin: 1rem;
+  }
+
+  nz-footer {
+    text-align: center;
+  }
+
+  .inner-content {
+    height: 100%;
+  }
+}

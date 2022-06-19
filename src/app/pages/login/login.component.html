@@ -1,17 +1,13 @@
-<form
-  nz-form
-  [formGroup]="form"
-  class="login-form"
-  (ngSubmit)="submitForm()"
->
+<form nz-form [formGroup]="form" class="login-form" (ngSubmit)="submitForm()">
   <nz-form-item>
     <nz-form-control nzErrorTip="Please input your username!">
       <nz-input-group nzPrefixIcon="user">
         <input
           type="text"
+          class="login-form-input"
           nz-input
-          formControlName="userName"
-          placeholder="Username"
+          formControlName="email"
+          placeholder="Email"
         />
       </nz-input-group>
     </nz-form-control>
@@ -21,6 +17,7 @@
       <nz-input-group nzPrefixIcon="lock">
         <input
           type="password"
+          class="login-form-input"
           nz-input
           formControlName="password"
           placeholder="Password"
@@ -34,9 +31,6 @@
         <span>Remember me</span>
       </label>
     </div>
-    <div nz-col [nzSpan]="12">
-      <a class="login-form-forgot">Forgot password</a>
-    </div>
   </div>
   <button
     nz-button
@@ -45,6 +39,4 @@
   >
     Log in
   </button>
-  Or
-  <a>register now!</a>
 </form>
