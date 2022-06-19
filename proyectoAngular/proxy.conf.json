@@ -1,9 +1,0 @@
-{
-  "/api/*":{
-    "target" : "http://ec2-54-170-162-0.eu-west-1.compute.amazonaws.com:8080",
-    "secure" : false,
-    "logLevel" : "debug",
-    "changeOrigin": true
-
-}
-}
