@@ -1,7 +1,7 @@
 export default interface Client {
     dni: string;
     nombre: string;
-    apellidos: string;
+    apellido: string;
     direccion: string;
-    numeroCliente: string;
+    num_cliente: string;
 }

@@ -21,23 +21,28 @@
     font-style: italic;
   }
 
-  [nz-menu] {
+  & [nz-menu] {
     line-height: 64px;
   }
 
-  nz-breadcrumb {
+  & nz-breadcrumb {
     margin: 16px 0;
   }
 
-  nz-content {
+  & nz-content {
     margin: 1rem;
   }
 
-  nz-footer {
+  & nz-footer {
     text-align: center;
   }
 
-  .inner-content {
+  & .inner-content {
     height: 100%;
+  }
+
+  & .button-add {
+    margin-top: 1rem;
+    width: 100%;
   }
 }

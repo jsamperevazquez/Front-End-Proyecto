@@ -71,9 +71,14 @@ export class ApiService {
     return this._http.put<Client>(URL, client)
   }
 
-  deleteClient(clientId: number): Observable<Client> {
+  deleteClient(clientId: string): Observable<Client> {
     const URL = API.GET_ENDPOINT(['clientes', clientId])
-    return this._http.delete<Client>(URL)
+    return this._http.delete<Client>(URL).pipe(
+      tap(() => {
+        const clients = this.clients.filter((client) => client.dni !== clientId)
+        this.clients = clients
+      })
+    )
   }
   //#endregion
 
@@ -102,7 +107,12 @@ export class ApiService {
 
   deleteProduct(productId: number): Observable<Product> {
     const URL = API.GET_ENDPOINT(['productos', productId])
-    return this._http.delete<Product>(URL)
+    return this._http.delete<Product>(URL).pipe(
+      tap(() => {
+        const products = this.products.filter((product) => product.codigo !== productId)
+        this.products = products
+      })
+    )
   }
   //#endregion
 
@@ -129,9 +139,14 @@ export class ApiService {
     return this._http.put<Provider>(URL, provider)
   }
 
-  deleteProvider(providerId: number): Observable<Provider> {
+  deleteProvider(providerId: string): Observable<Provider> {
     const URL = API.GET_ENDPOINT(['proveedores', providerId])
-    return this._http.delete<Provider>(URL)
+    return this._http.delete<Provider>(URL).pipe(
+      tap(() => {
+        const providers = this.providers.filter((provider) => provider.nif !== providerId)
+        this.providers = providers
+      })
+    )
   }
   //#endregion
 }

@@ -9,82 +9,282 @@
   </nz-header>
   <nz-content>
     <div class="inner-content">
-        <!-- clientes -->
-        <ng-container *ngIf="pageIndex === 0">
-            <nz-table #basicTable [nzData]="clients">
-                <thead>
-                  <tr>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Dirección</th>
-                    <th>Nº Cliente</th>
-                    <th [nzAlign]="'center'"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let data of basicTable.data">
-                    <td>{{ data.dni }}</td>
-                    <td>{{ data.nombre }}</td>
-                    <td>{{ data.apellidos }}</td>
-                    <td>{{ data.direccion }}</td>
-                    <td>{{ data.numeroCliente }}</td>
-                    <td [nzAlign]="'center'">
-                      <i nz-icon nzType="edit" nzTheme="outline"></i>
-                      <nz-divider nzType="vertical"></nz-divider>
-                      <i nz-icon nzType="delete" nzTheme="outline"></i>
-                    </td>
-                  </tr>
-                </tbody>
-              </nz-table>
-        </ng-container>
-        <!-- productos -->
-        <ng-container *ngIf="pageIndex === 1">
-            <nz-table #basicTable [nzData]="products">
-                <thead>
-                  <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let data of basicTable.data">
-                    <td>{{ data.codigo }}</td>
-                    <td>{{ data.nombre }}</td>
-                    <td>{{ data.precio }}</td>
-                    <td [nzAlign]="'center'">
-                        <i nz-icon nzType="edit" nzTheme="outline"></i>
-                        <nz-divider nzType="vertical"></nz-divider>
-                        <i nz-icon nzType="delete" nzTheme="outline"></i>
-                      </td>
-                  </tr>
-                </tbody>
-              </nz-table>
-        </ng-container>
-        <!-- proveedores -->
-        <ng-container *ngIf="pageIndex === 2">
-            <nz-table #basicTable [nzData]="providers">
-                <thead>
-                  <tr>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Dirección</th>
-                    <th>Nº Cliente</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let data of basicTable.data">
-
-                  </tr>
-                </tbody>
-              </nz-table>
-        </ng-container>
+      <!-- clientes -->
+      <ng-container *ngIf="pageIndex === 0">
+        <nz-table #basicTable [nzData]="clients">
+          <thead>
+            <tr>
+              <th>DNI</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Dirección</th>
+              <th>Nº Cliente</th>
+              <th [nzAlign]="'center'"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>{{ data.dni }}</td>
+              <td>{{ data.nombre }}</td>
+              <td>{{ data.apellido }}</td>
+              <td>{{ data.direccion }}</td>
+              <td>{{ data.num_cliente }}</td>
+              <td [nzAlign]="'center'">
+                <i
+                  nz-icon
+                  nzType="edit"
+                  nzTheme="outline"
+                  (click)="hndEditClientClick(data)"
+                ></i>
+                <nz-divider nzType="vertical"></nz-divider>
+                <i
+                  nz-icon
+                  nzType="delete"
+                  nzTheme="outline"
+                  (click)="hndDeleteClientClick(data)"
+                ></i>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </ng-container>
+      <!-- productos -->
+      <ng-container *ngIf="pageIndex === 1">
+        <nz-table #basicTable [nzData]="products">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>{{ data.codigo }}</td>
+              <td>{{ data.nombre }}</td>
+              <td>{{ data.precio }}</td>
+              <td [nzAlign]="'center'">
+                <i
+                  nz-icon
+                  nzType="edit"
+                  nzTheme="outline"
+                  (click)="hndEditProductClick(data)"
+                ></i>
+                <nz-divider nzType="vertical"></nz-divider>
+                <i
+                  nz-icon
+                  nzType="delete"
+                  nzTheme="outline"
+                  (click)="hndDeleteProductClick(data)"
+                ></i>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </ng-container>
+      <!-- proveedores -->
+      <ng-container *ngIf="pageIndex === 2">
+        <nz-table #basicTable [nzData]="providers">
+          <thead>
+            <tr>
+              <th>Dirección</th>
+              <th>NIF</th>
+              <th>Nombre</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>{{ data.direccion }}</td>
+              <td>{{ data.nif }}</td>
+              <td>{{ data.nombre }}</td>
+              <td [nzAlign]="'center'">
+                <i
+                  nz-icon
+                  nzType="edit"
+                  nzTheme="outline"
+                  (click)="hndEditProviderClick(data)"
+                ></i>
+                <nz-divider nzType="vertical"></nz-divider>
+                <i
+                  nz-icon
+                  nzType="delete"
+                  nzTheme="outline"
+                  (click)="hndDeleteProviderClick(data)"
+                ></i>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </ng-container>
+      <button
+        class="button-add"
+        nz-button
+        nzType="primary"
+        (click)="hndAddButtonClick($event)"
+      >
+        Añadir
+      </button>
     </div>
   </nz-content>
   <nz-footer>Samairsolutions ©2022</nz-footer>
 </nz-layout>
+
+<nz-modal
+  [(nzVisible)]="isModalVisible"
+  [nzTitle]="modalTitle"
+  (nzOnCancel)="hndModalCancel()"
+  (nzOnOk)="hndModalOK()"
+  [nzOkLoading]="!isModalActionCompleted"
+>
+  <form
+    class="modal-form"
+    *nzModalContent
+    nz-form
+    [nzLayout]="'inline'"
+    [formGroup]="form"
+  >
+    <ng-container *ngIf="pageIndex === 0">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce un DNI valido">
+          <nz-input-group nzPrefixIcon="idcard">
+            <input
+              type="text"
+              class="login-form-input"
+              nz-input
+              formControlName="dni"
+              placeholder="DNI"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce un nombre valido">
+          <nz-input-group nzPrefixIcon="user">
+            <input
+              type="text"
+              class="login-form-input"
+              nz-input
+              formControlName="nombre"
+              placeholder="Nombre"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce un apellido valido">
+          <nz-input-group nzPrefixIcon="user">
+            <input
+              type="text"
+              class="login-form-input"
+              nz-input
+              formControlName="apellido"
+              placeholder="apellido"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce una direccion valida">
+          <nz-input-group nzPrefixIcon="home">
+            <input
+              type="text"
+              class="login-form-input"
+              nz-input
+              formControlName="direccion"
+              placeholder="Direccion"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-container>
+    <ng-container *ngIf="pageIndex === 1">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce un código valido">
+          <nz-input-group nzPrefixIcon="barcode">
+            <input
+              class="login-form-input"
+              nz-input
+              nz-tooltip
+              nzOverlayClassName="numeric-input"
+              formControlName="codigo"
+              placeholder="Código"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce un nombre valido">
+          <nz-input-group>
+            <input
+              class="login-form-input"
+              nz-input
+              nz-tooltip
+              nzOverlayClassName="numeric-input"
+              formControlName="nombre"
+              placeholder="Nombre"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce un código valido">
+          <nz-input-group nzPrefixIcon="euro">
+            <input
+              class="login-form-input"
+              nz-input
+              nz-tooltip
+              formControlName="precio"
+              placeholder="Precio"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-container>
+    <ng-container *ngIf="pageIndex === 2">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce una NIF valido">
+          <nz-input-group nzPrefixIcon="idcard">
+            <input
+              class="login-form-input"
+              nz-input
+              nz-tooltip
+              nzOverlayClassName="numeric-input"
+              formControlName="nif"
+              placeholder="NIF"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce un nombre valido">
+          <nz-input-group>
+            <input
+              class="login-form-input"
+              nz-input
+              nz-tooltip
+              nzOverlayClassName="numeric-input"
+              formControlName="nombre"
+              placeholder="Nombre"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Por favor, introduce una dirección valida">
+          <nz-input-group nzPrefixIcon="home">
+            <input
+              type="text"
+              class="login-form-input"
+              nz-input
+              formControlName="direccion"
+              placeholder="Direccion"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-container>
+  </form>
+</nz-modal>
